@@ -10,12 +10,6 @@ const ScreenLayout = () => {
 
       <Stack>
           <Stack.Screen
-            name="DisplayDocuments"
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
           name="QrCode"
           options={{
             headerShown: false,

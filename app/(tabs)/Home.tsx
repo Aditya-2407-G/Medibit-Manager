@@ -26,9 +26,6 @@ const Home = () => {
   const handleQr = async () => {
     router.push("/QrCode");
   }
-  const DocumentRoute = async () => {
-    router.push("DisplayDocuments");
-  };
 
   return (
     <SafeAreaView className="bg-primary h-full flex justify-center p-4">
@@ -44,13 +41,6 @@ const Home = () => {
           textStyles={undefined}
           isLoading={undefined}
         />
-        <CustomButton
-          title="View Files"
-          handlePress= {DocumentRoute}
-          containerStyles="w-full"
-          textStyles={undefined}
-          isLoading={undefined}
-          />
 
       </View>
     </SafeAreaView>
