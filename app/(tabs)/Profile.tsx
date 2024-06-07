@@ -3,7 +3,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Image, FlatList, TouchableOpacity, Text } from "react-native";
 
 import { icons } from "../../constants";
-// import useAppwrite from "../../lib/appwrite";
 import { siguOut } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalContextProvider";
 

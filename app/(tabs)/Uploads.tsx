@@ -10,7 +10,7 @@ import {
   ActivityIndicator,
   ToastAndroid,
 } from "react-native";
-import { deleteFile, getFileUri, viewDocument } from "@/lib/appwrite";
+import { deleteFile, getFileUri, getUserDocuments } from "@/lib/appwrite";
 import * as FileSystem from "expo-file-system";
 import { shareAsync } from "expo-sharing";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -21,7 +21,7 @@ const Uploads = () => {
 
   const fetchUserFiles = useCallback(async () => {
     try {
-      const result = await viewDocument();
+      const result = await getUserDocuments();
       if (!result) {
         throw new Error("No files found! Try Uploading a file first!");
       }
@@ -134,12 +134,18 @@ const Uploads = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-primary">
-        <View className="bg-purple-300 flex mr-60 pt-2 pb-2 rounded-md">
+      <View className="flex-row">
+      <View className="bg-purple-300 flex mr-60 pt-2 pb-2 rounded-md">
         <Text className="text-blacktext-bold text-2xl text-center">
         Your Uploads
       </Text>
 
         </View>
+      <TouchableOpacity className="" onPress={()=>{fetchUserFiles()}}>
+        <Text className="text-white ">Refresh</Text>
+        </TouchableOpacity>
+      </View>
+
 
         <FlatList
       className="mt-3 bg-slate-800 rounded-md p-2"
