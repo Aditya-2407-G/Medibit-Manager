@@ -5,25 +5,8 @@ import { Image, Text, View } from "react-native";
 import { icons } from "../../constants";
 import { Loader } from "../../components/Loader";
 import { useGlobalContext } from "../../context/GlobalContextProvider";
+import { TabIcon } from "@/components/TabIcon";
 
-const TabIcon = ({ icon, color, name, focused }: any) => {
-  return (
-    <View className="flex items-center justify-center gap-2">
-      <Image
-        source={icon}
-        resizeMode="contain"
-        tintColor={color}
-        className="w-6 h-6"
-      />
-      <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
-      >
-        {name}
-      </Text>
-    </View>
-  );
-};
 
 const TabLayout = () => {
   const { loading, isLogged } = useGlobalContext();
@@ -59,6 +42,8 @@ const TabLayout = () => {
                 color={color}
                 name="Home"
                 focused={focused}
+                containerStyle="w-6 h-6"
+                iconStyle= "gap-2"
               />
             ),
           }}
@@ -74,6 +59,9 @@ const TabLayout = () => {
                 color={color}
                 name="Uploads"
                 focused={focused}
+                containerStyle="w-6 h-6"
+                iconStyle= "gap-2"
+
               />
             ),
           }}
@@ -89,6 +77,9 @@ const TabLayout = () => {
                 color={color}
                 name="Profile"
                 focused={focused}
+                containerStyle="w-6 h-6"
+                iconStyle= "gap-2"
+
               />
             ),
           }}

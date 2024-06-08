@@ -8,7 +8,7 @@ const QrCode = () => {
 
 
     const [name, setName] = useState("");
-    const [qrCodeData, setQrCodeData] = useState<any>();
+    const [qrCodeData, setQrCodeData] = useState<any>("");
 
     useEffect(() => {
         const fetchAccountData = async () => {
@@ -17,7 +17,6 @@ const QrCode = () => {
             setName(user.name);
     
             let accountData = await getQrData();  
-            console.log(accountData); 
             setQrCodeData(accountData)
           }
         };
@@ -27,13 +26,14 @@ const QrCode = () => {
 
 
   return (
-    <SafeAreaView className='flex-col h-full justify-evenly'>
-      <Text className='text-center mt-10 text-white'>QrCode</Text>
+    <SafeAreaView className='flex-col h-full justify-around'>
+      <Text className='text-center text-3xl mt-10 text-black'>Get files from users seamlessly using QR </Text>
+      <Text className='text-center text-2xl mb-20 text-black'>Scan the QR code below to start recieving the files</Text>
 
       <View className='flex-row self-center'>
       <QRCode
-          value={JSON.stringify({qrCodeData})}// Ensure value is a string
-          size={300}  // Adjust the size as needed
+          value={JSON.stringify({qrCodeData})}
+          size={350} 
           backgroundColor="white"
           color="black"
           

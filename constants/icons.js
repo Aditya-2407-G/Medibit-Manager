@@ -13,6 +13,9 @@ import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 import crossfit from "../assets/icons/crossfit.png";  
 import folder from "../assets/icons/folder.png";
+import refresh from "../assets/icons/refresh.png";
+import cross from "../assets/icons/cross.png";
+import download from "../assets/icons/download.png";
 
 export default {
   play,
@@ -20,9 +23,12 @@ export default {
   home,
   plus,
   profile,
+  refresh,
   leftArrow,
   menu,
   search,
+  cross, 
+  download,
   upload,
   rightArrow,
   logout,
